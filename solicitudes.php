@@ -1,4 +1,5 @@
-<?php include ("controllers/funciones.php");?>
+<?php include("config/config.php");?>
+<?php include("config/funciones.php");?>
 <?php require("views/cabecera.php"); ?>
   <style type="text/css">
 
@@ -116,9 +117,7 @@ echo "";
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                        <?php  
-    $link = mysql_connect("localhost", "root", "root"); 
-mysql_select_db("monasterio3",$link);
+                        <?php
 	$consulta_mysql='select * from mercancia';
 $resultado_consulta_mysql=mysql_query($consulta_mysql,$link);
   

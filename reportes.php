@@ -37,7 +37,7 @@
                     <h5 class="text-center">
                         Mercancia Existente</h5>
                    <?php 
-$link = mysql_connect("localhost", "root", "root"); 
+$link = mysql_connect("localhost", "root", "root");
 mysql_select_db("monasterio3",$link);
 $consulta_mysql='select * from mercancia';
 $resultado_consulta_mysql=mysql_query($consulta_mysql,$link);
@@ -111,7 +111,7 @@ echo "</form>";
                     <h5 class="text-center">
                         Productos Despachados</h5>
                    <?php 
-$link = mysql_connect("localhost", "root", "root"); 
+$link = mysql_connect("localhost", "root", "root");
 mysql_select_db("monasterio3",$link);
 $consulta_mysql='select * from egresos';
 $resultado_consulta_mysql=mysql_query($consulta_mysql,$link);
@@ -147,7 +147,7 @@ echo "</form>";
                     <h5 class="text-center">
                         Proveedores Disponibles</h5>
                    <?php 
-$link = mysql_connect("localhost", "root", "root"); 
+$link = mysql_connect("localhost", "root", "root");
 mysql_select_db("monasterio3",$link);
 $consulta_mysql='select * from proveedor';
 $resultado_consulta_mysql=mysql_query($consulta_mysql,$link);
@@ -187,7 +187,7 @@ echo "</form>";
                     <h5 class="text-center">
                         Productos Despachados</h5>
                    <?php 
-$link = mysql_connect("localhost", "root", "root"); 
+$link = mysql_connect("localhost", "root", "root");
 mysql_select_db("monasterio3",$link);
 $consulta_mysql='select * from egresos';
 $resultado_consulta_mysql=mysql_query($consulta_mysql,$link);

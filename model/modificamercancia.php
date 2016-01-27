@@ -1,5 +1,5 @@
 <?php
-$link = mysql_connect("localhost", "root", "root"); 
+$link = mysql_connect("localhost", "root", "root");
 mysql_select_db("monasterio3",$link);
 $nombre = ($_POST['nombre']);
 $existencia = ($_POST['existencia']);

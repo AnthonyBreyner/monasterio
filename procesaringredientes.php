@@ -1,6 +1,7 @@
-<?php include ("controllers/funciones.php");?>
+<?php include("config/config.php");?>
+<?php include "config/funciones.php";?>
 <?php require("views/cabecera.php"); ?>
-  <style type="text/css">
+<style type="text/css" xmlns="http://www.w3.org/1999/html">
 .table{
 	margin:0 auto;
 	padding: 10px;
@@ -10,33 +11,42 @@
 	margin:0 auto;
 }
   </style>
-  <script src="js/funciones.js"> </script>
+  <script src="js/functions.js"> </script>
   <body>
   	 <br>
         <div class="container">
 <?php require("views/menu.php"); ?>
 <div class="container">
 <div class="jumbotron">
-	<h3 style="	color:#A94442;
-	font-weight: bold;">
+
 		<?php 
 		 $cantidad = ($_POST['nombre']);
        echo "$cantidad";
 		?>
 		
 		<?php
-$link = mysql_connect("localhost", "root", "root"); 	
-mysql_select_db("monasterio3",$link);
 $nombre = $_POST['nombre'];
- mysql_select_db($dbname,$link);	
-$sql = "delete from platospedidos where nombre ='$nombre' ";
-$sql = mysql_query($sql) or die("No se pudo realizar la consulta");
-echo mysql_error();
-?> 
-	</h3>
-	<br>
-Gracias por su Despacho
-volver a mis pedidos:
+		print('<pre>');
+		foreach($_POST as $clave=>$valor){
+
+			if($valor=='on'){
+
+				$elemento=explode('_',$clave);
+				$id= $_POST['id_'.$elemento[1]];
+				$cantidad= $_POST['cantidad_'.$elemento[1]];
+				if($cantidad=='')$cantidad=0;
+				$sql = "update mercancia set existencia=existencia-$cantidad where id =$id";
+				//echo $sql.$cantidad."<br>";
+				$sqlquery = mysql_query($sql) or die("No se pudo realizar la consulta");
+				echo mysql_error();
+			}
+
+		}
+
+
+?>
+		Gracias por su Despacho.
+		<a href="mispedidos.php"> Volver a mis pedidos.</a>
 
 	</form>
 </table>

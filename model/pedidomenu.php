@@ -1,7 +1,7 @@
 <?php
 include('../config.php');
-$nombre = $_GET['nombre']; 
-echo $nombre . "<br>";  
+$nombre = $_GET['nombre'];
+echo $nombre . "<br>";
 mysql_query("INSERT INTO solicitudes (nombre)
         VALUES ('{$nombre}')",$link);
         $my_error = mysql_error($link);

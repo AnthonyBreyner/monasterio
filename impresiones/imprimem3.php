@@ -1,6 +1,6 @@
 <?php include("../includes/connection.php"); ?>	
 <?php 
-$link = mysql_connect("localhost", "root", "root"); 
+$link = mysql_connect("localhost", "root", "root");
 mysql_select_db("monasterio3",$link);
 $consulta_mysql='select * from proveedor';
 $resultado_consulta_mysql=mysql_query($consulta_mysql,$link);

@@ -13,6 +13,7 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="inicio.php">Inicio</a></li>
+              <li><a href="registros.php">Registros</a></li>
             	<li><a href="solicitudes.php">Solcitudes</a></li>
             	<li><a href="mispedidos.php">Mis Pedidos</a></li>
             </ul>

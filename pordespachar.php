@@ -1,4 +1,5 @@
-<?php include ("controllers/funciones.php");?>
+<?php include("config/config.php");?>
+<?php include("config/funciones.php");?>
 <?php require("views/cabecera.php"); ?>
   <style type="text/css">
 .table{
@@ -30,8 +31,6 @@ echo "Fue procesada con exito.";
 	<br>
 <table class="table" cellpadding="10">
 <?php
-$link = mysql_connect("localhost", "root", "root"); 
-mysql_select_db("monasterio3",$link);
 $nombre = $_GET['nombre'];
 $cantidad = $_GET['cantidad'];
 $fecha=date("d-m-y");  

@@ -1,6 +1,6 @@
-<?php include("../includes/connection.php"); ?>	
-<?php 
-$link = mysql_connect("localhost", "root", "root"); 
+<?php include("../includes/connection.php"); ?>
+<?php
+$link = mysql_connect("localhost", "root", "root");
 mysql_select_db("monasterio3",$link);
 $consulta_mysql='select * from mercancia';
 $resultado_consulta_mysql=mysql_query($consulta_mysql,$link);

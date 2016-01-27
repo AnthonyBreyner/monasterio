@@ -1,3 +1,4 @@
+<?php include("config/config.php");?>
 <?php require("views/cabecera.php"); ?>
   <style type="text/css">
 
@@ -27,9 +28,7 @@
                 <div class="panel-body" style="width: 50%;margin: 0 auto;">
                     <h5 class="text-center">
                         Productos por Comprar</h5>
-                   <?php 
-$link = mysql_connect("localhost", "root", "root"); 
-mysql_select_db("monasterio3",$link);
+                   <?php
 $consulta_mysql='select * from pedidos';
 $resultado_consulta_mysql=mysql_query($consulta_mysql,$link);
 echo "<table id='tablaresultado'  style='width:100%;font-size:13px;'>";  
@@ -62,9 +61,7 @@ echo "</table>";
                 <div class="panel-body" style="width: 50%;margin: 0 auto;">
                     <h5 class="text-center">
                         Productos por Despachar</h5>
-                   <?php 
-$link = mysql_connect("localhost", "root", "root"); 
-mysql_select_db("monasterio3",$link);
+                   <?php
 $consulta_mysql='select * from solicitudes';
 $resultado_consulta_mysql=mysql_query($consulta_mysql,$link);
 echo "<form name='registerform' id='registerform' action='mispedidos.php' method='post'>";
@@ -97,9 +94,7 @@ echo "</form>";
                 <div class="panel-body" style="width: 50%;margin: 0 auto;">
                     <h5 class="text-center">
                         Ingredientes por Despachar</h5>
-                   <?php 
-$link = mysql_connect("localhost", "root", "root"); 
-mysql_select_db("monasterio3",$link);
+                   <?php
 $consulta_mysql='select * from platospedidos';
 $resultado_consulta_mysql=mysql_query($consulta_mysql,$link);
 echo "<form name='registerform' id='registerform' action='mispedidos.php' method='post'>";
@@ -112,7 +107,7 @@ echo "</tr>";
 while($row=mysql_fetch_array($resultado_consulta_mysql)){
 		echo "<tr>";
 	    echo "<td>$row[1]</td>";
-		echo"<td><a href='guardamenu.php?nombre=".$row[1]."'>Seleccionar y Despachar...</a></td>";
+		echo"<td><a href='guardamenu.php?nombre=".$row[1]."&ingredientes=".$row[2]."'>Seleccionar y Despachar...</a></td>";
 		echo "</tr>";
 }
 echo "</tr>";

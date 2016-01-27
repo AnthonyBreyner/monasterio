@@ -1,4 +1,5 @@
-<?php include ("controllers/funciones.php");?>
+<?php include("config/config.php");?>
+<?php include("config/funciones.php");?>
 <?php require("views/cabecera.php"); ?>
   <style type="text/css">
 .table{
@@ -40,9 +41,7 @@
 	font-weight: bold;
 }
 	</style>
-	 <?php 
-$link = mysql_connect("localhost", "root", "root"); 
-mysql_select_db("monasterio3",$link); 
+	 <?php
 $sql = "select * from recetas where categoria = 'desayunos'";
 $sql = mysql_query($sql) or die("No se pudo realizar la consulta"); 
 while($row = mysql_fetch_array($sql)) 
@@ -68,7 +67,7 @@ echo "<hr/>";
 echo "</table>";
 } 
 echo mysql_error(); 
-?> 
+?>
 </table>
 	
 </div>

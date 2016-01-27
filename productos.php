@@ -1,4 +1,5 @@
-<?php include ("controllers/funciones.php");?>
+<?php include("config/config.php");?>
+<?php include("config/funciones.php");?>
 <?php require("views/cabecera.php"); ?>
   <style type="text/css">
 
@@ -23,8 +24,6 @@
   <div id="tabs-1" style="height: 50px;overflow-y:scroll;">
    </div>
    	<?php
-  	$link = mysql_connect("localhost", "root", "root"); 
-mysql_select_db("monasterio3",$link);
 	$consulta_mysql='select * from mercancia';
 $resultado_consulta_mysql=mysql_query($consulta_mysql,$link);
 echo "<table id='tablaresultado' style='width:100%;font-size:13px;'>";  

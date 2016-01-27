@@ -1,4 +1,4 @@
-<?php include ("controllers/funciones.php");?>
+<?php include("config/funciones.php");?>
 <?php require("views/cabecera.php"); ?>
   <style type="text/css">
 

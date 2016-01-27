@@ -1,4 +1,5 @@
-<?php include ("controllers/funciones.php");?>
+<?php include("config/config.php");?>
+<?php include("config/funciones.php");?>
 <?php require("views/cabecera.php"); ?>
   <style type="text/css">
 .table{
@@ -27,10 +28,8 @@ echo $nombre;
 	<br>
 <table class="table" cellpadding="10">
 <?php
-$link = mysql_connect("localhost", "root", "root"); 
-mysql_select_db("monasterio3",$link);
 $nombre = $_GET['nombre'];  
-$sql = "select * from recetas where nombre ='$nombre' ";
+$sql = "select * from recetas where nombre ='$nombre'";
 $sql = mysql_query($sql) or die("No se pudo realizar la consulta"); 
 while($row = mysql_fetch_array($sql)) 
 {
@@ -60,7 +59,7 @@ echo "</td>";
 echo "</tr>";
 echo "<tr>";
 echo "<td>";
-echo"<a href='hacerpedido.php?nombre=".$row['nombre']."'>Hacer Pedido</a>";
+echo"<a href='hacerpedido.php?nombre=".$row['nombre']."&ingredientes=".$row['ingredientes']."'>Hacer Pedido</a>";
 echo "<hr/>";
 echo "</td>";
 echo "</tr>";

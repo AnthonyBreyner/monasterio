@@ -1,4 +1,5 @@
-<?php include ("controllers/funciones.php");?>
+<?php include("config/config.php");?>
+<?php include("config/funciones.php");?>
 <?php require("views/cabecera.php"); ?>
   <style type="text/css">
 .table{
@@ -39,9 +40,7 @@
 	font-weight: bold;
 }
 	</style>
-	 <?php 
-$link = mysql_connect("localhost", "root", "root"); 
-mysql_select_db("monasterio3",$link); 
+	 <?php
 $sql = "select * from recetas where categoria = 'cenas'";
 $sql = mysql_query($sql) or die("No se pudo realizar la consulta"); 
 while($row = mysql_fetch_array($sql)) 
@@ -56,7 +55,7 @@ echo "<td class='resultadosletras'>".$row["nombre"]."<td>";
 echo "</tr>";
 echo "<tr>";
 echo "<td>";
-echo $row['descripcion']; 
+echo $row['descripcion'];
 echo "</td>";
 echo "</tr>";
 echo"<td><a href='generico.php?nombre=".$row['nombre']."'>Ver Receta.</a></td>";
